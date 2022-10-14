@@ -1,2 +1,2 @@
 ## Learnig python
-Learning python :) 
+Review python and learnig it completely :) 
