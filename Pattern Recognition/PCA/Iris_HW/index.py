@@ -45,9 +45,25 @@ pca_df['target'] = pca_df['target'].map(target_names)
 # Bar plot of explained_variance
 plt.bar(
     range(1,len(pca.explained_variance_)+1),
-    pca.explained_variance_
+    pca.explained_variance_ratio_*100
     )
- 
+
+    # plt.bar(
+    # range(1,len(pca.explained_variance_)+1),
+    # pca.explained_variance_
+    # )
+
+print(
+    f"""
+    each eigenvector explained variance: {pca.explained_variance_}
+    each eigenvector explained variance ratio: {pca.explained_variance_ratio_ *100}
+    """
+)
+
+plt.xlabel('PCA Feature')
+plt.ylabel('Explained variance')
+plt.title('Feature Explained Variance')
+plt.show()
 plt.plot(
     range(1,len(pca.explained_variance_ )+1),
     np.cumsum(pca.explained_variance_),
