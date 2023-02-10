@@ -54,8 +54,30 @@ https://practicaldatascience.co.uk/machine-learning/how-to-save-and-load-machine
 https://www.tensorflow.org/guide/keras/save_and_serialize <br />
 
 
+## Enviroment
+Enviroment used in the RL projects, In RL we have some important parts, one of them is enviroment, for having enviroment we can use a library as name **Gymnasium**. <br />
+There are many enviroments like: 
 
+1. Classis Enviroment: Cart Pole , Acrobot , Mountain Car , Pendulum
+2. Multi-Joint dynamics with Contact (aka MuJoCo): Ant, Walker
+3. Atari: Adventure, Alien
 
+```
+import gymnasium as gym
+env = gym.make("LunarLander-v2", render_mode="human")
+observation, info = env.reset()
+
+for _ in range(1000):
+    action = env.action_space.sample()  # agent policy that uses the observation and info
+    observation, reward, terminated, truncated, info = env.step(action)
+
+    if terminated or truncated:
+        observation, info = env.reset()
+
+env.close()
+
+```
+https://github.com/Farama-Foundation/Gymnasium
 
 
 
